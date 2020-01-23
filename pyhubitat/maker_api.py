@@ -1,4 +1,4 @@
-import httpx
+import requests
 import os
 import time
 
@@ -19,7 +19,7 @@ class MakerAPI:
         """
         params = {'access_token': self.token}
         url = '{}/{}'.format(self.api_base_url, url_suffix)
-        return httpx.get(url, params=params, verify=self.ssl_verify)
+        return requests.get(url, params=params, verify=self.ssl_verify)
         
     def list_devices(self):
         """
